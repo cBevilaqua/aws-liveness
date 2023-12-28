@@ -28,16 +28,23 @@ export class FaceLivenessComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("before subscribe")
     this.faceLivenessService.liveness_session.subscribe(([status, data]) => {
       if (status == 'success') {
         this.initate_liveness_session(data);
       }
     })
 
+    console.log("after subscribe")
     AWS.config.region = awsmobile['aws_project_region'];
     const cognito_endpoint = `cognito-idp.${awsmobile['aws_project_region']}.amazonaws.com/${awsmobile['aws_user_pools_id']}`
     // Initialize the Amazon Cognito credentials provider
+    
+    this.get_liveness_session()
+    
+    console.log("after get liveness sessions")
     const session = this.faceLivenessService.get_current_session().then(data => {
+      console.log("will get credentials!!!!")
       AWS.config.credentials = new AWS.CognitoIdentityCredentials({
         IdentityPoolId: awsmobile['aws_cognito_identity_pool_id'],
         Logins: {
@@ -47,6 +54,7 @@ export class FaceLivenessComponent implements OnInit {
 
       this.get_liveness_session()
     }).catch(err => {
+      console.log("err>>> ", err)
       console.log(err)
     }
     );

@@ -16,6 +16,8 @@ export class LivenessService {
 
   // Modify to get face liveness session
   async get_face_liveness_session() {
+    console.log("env vars::: ")
+    console.log(process.env)
     var rekognition = new AWS.Rekognition();
     console.log("rekognition ", rekognition);
     rekognition.createFaceLivenessSession({}, (err, data) => {

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-zooxtest-dev-120952-authRole",
+      "UnauthRoleArn": "arn:aws:iam::575387698472:role/amplify-zooxtest-dev-120952-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::575387698472:role/amplify-zooxtest-dev-120952-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-zooxtest-dev-120952-deployment",
+      "UnauthRoleName": "amplify-zooxtest-dev-120952-unauthRole",
+      "StackName": "amplify-zooxtest-dev-120952",
+      "StackId": "arn:aws:cloudformation:us-east-1:575387698472:stack/amplify-zooxtest-dev-120952/8275b660-9449-11ee-bb41-12302ed89f91",
+      "AmplifyAppId": "d2ztfndvombjnb"
+    },
+    "categories": {
+      "auth": {
+        "zooxtestde261019": {}
+      }
+    }
+  }
+}
